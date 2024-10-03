@@ -12,7 +12,10 @@ public class ShelterSystem {
         m.createShelter();
         m.menu();
     }
-
+    
+    /**
+     * Le pregunta al usuario la información del refugio que quiere agregar
+     */
     public void createShelter() {
         System.out.println("--Bienvenido a la aplicación de la administración del refugio--");
 
@@ -32,6 +35,10 @@ public class ShelterSystem {
         controller.createShelter(shelterName, shelterAddress, shelterBudget, shelterCapacity);
     }
 
+    /**
+     * Menú que, después de registrar el refugio, le pregunta al usuario la opción que quiere. Entre registrar un animal, consultar
+     * la información de un animal por ID o nombre, obtener el número de animales por specie o salir del menú
+     */
     public void menu() {
         int option = 0;
 
@@ -64,6 +71,10 @@ public class ShelterSystem {
         }
     }
 
+    /**
+     * Método que le pregunta la información del animal a registrar, después de que el usuario haya puesto la opción de 
+     * registrar animal
+     */
     public void registerAnimal() {
         System.out.print("Ingrese el nombre del animal: ");
         String animalName = sc.nextLine();
@@ -84,6 +95,11 @@ public class ShelterSystem {
         System.out.println(msg);
     }
 
+    /**
+     *  Método que, después de que el usuario haya elegido la opción de buscar un animal por ID o nombre, le devuelve al
+     * usuario la información del animal que buscó por nombre o identificación
+     * 
+     */
     public void getAnimalByAttribute() {
         System.out.println("1. Para consultar animal por nombre");
         System.out.println("2. Para consultar animal por ID");
@@ -108,6 +124,9 @@ public class ShelterSystem {
         System.out.println(msg);
     }
 
+    /**
+     * Método que devuelve la cantidad de ejemplares de la especie elegida por el usuario
+     */
     public void speciesQuantity() {
         System.out.print("Ingrese el nombre de la especie: ");
         String specie = sc.nextLine().toLowerCase();
